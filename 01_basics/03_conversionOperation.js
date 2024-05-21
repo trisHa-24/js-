@@ -21,3 +21,19 @@ console.log(booleanIsLoggedIn);
 let n = 33;
 let stringN = String(n);
 console.log(typeof stringN);
+
+//..... Operations ....
+
+let str1 ="hey";
+let str2 = " Trisha";
+
+let str3 = str1 + str2;
+console.log(str3);
+
+console.log("1"+2);
+console.log("1"+2+2);
+console.log(1+2+"2");
+console.log((3+4) * 5 );
+
+console.log(+true);
+console.log(-"");
