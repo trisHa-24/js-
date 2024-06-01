@@ -45,9 +45,25 @@ const user = [
 
 ]
 user[1].email; 
-console.log(tinderUser);
-console.log(Object.keys(tinderUser)); //this gives array of keys , similarly ,value for value
+// console.log(tinderUser);
+// console.log(Object.keys(tinderUser)); //this gives array of keys , similarly ,value for value
 
-console.log(Object.entries(tinderUser));//[['id':'123abx'], [..],....., [..]]
+// console.log(Object.entries(tinderUser));//[['id':'123abx'], [..],....., [..]]
 
-console.log(tinderUser.hasOwnProperty('isLogged'));
+// console.log(tinderUser.hasOwnProperty('isLogged'));
+
+
+///////////////////////////////////
+
+const course = {
+    coursename: "js",
+    price: "999",
+    courseInstructor: "hitesh"
+}
+
+// course.courseInstructor
+
+const {coursename, price, courseInstructor} = course; //object destructure
+
+console.log(coursename);
+
