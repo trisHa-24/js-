@@ -28,3 +28,26 @@ const obj2 = {3: "a", 4: "b"};
 
 const obj3 = {...obj1, ...obj2};
 console.log(obj3);
+
+const user = [
+    {
+        id: 1,
+        email: "t@gmail,com"
+    },
+    {
+        id: 1,
+        email: "t@gmail,com"
+    },
+    {
+        id: 1,
+        email: "t@gmail,com"
+    }
+
+]
+user[1].email; 
+console.log(tinderUser);
+console.log(Object.keys(tinderUser)); //this gives array of keys , similarly ,value for value
+
+console.log(Object.entries(tinderUser));//[['id':'123abx'], [..],....., [..]]
+
+console.log(tinderUser.hasOwnProperty('isLogged'));
