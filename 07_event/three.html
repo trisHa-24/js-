@@ -12,12 +12,26 @@
 </body>
 
 <script>
- const sayDate = function(str){
-    console.log(str, Date.now());
+    let intervalId;
+ const sayName = function(){
+    if(!intervalId)
+       intervalId = setInterval(printMe,1000);
  }
-  const intervalId = setInterval(sayDate,1000, "Hey");
 
-  clearInterval(intervalId);
+ function printMe(){
+    console.log("Trisha")
+    console.log("Hi");
+ }
+  
+ const stopPrint = function (){
+    clearInterval(intervalId);
+    intervalId=null;
+ }
+ document.querySelector('#start').addEventListener('click', sayName);
+
+ document.querySelector("#stop").addEventListener('click', stopPrint);
+  
+  
     
 </script>
 
