@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async concepts</title>
+</head>
+<body>
+    <h1>Set time out</h1>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    const sayTrisha = function(){
+        console.log("Trisha");
+    }
+    const changedText = function(){
+        document.querySelector('h1').innerHTML = "updated concept";
+    }
+    const changeMe = setTimeout(changedText , 2000);
+     
+     document.querySelector('#stop').addEventListener('click', function(e){
+        clearTimeout(changeMe);
+        console.log("stopped");
+     })
+
+    
+</script>
+
+</html>
