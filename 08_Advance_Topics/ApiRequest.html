@@ -6,18 +6,59 @@
     <title>Document</title>
 </head>
 <body style="background-color: black;">
-    xml http request -> AJAX programming(asynschronous js and xml )
+    <!-- xml http request -> AJAX programming(asynschronous js and xml )
     0	UNSENT	Client has been created. open() not called yet.
         1	OPENED	open() has been called.
         2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
         3	LOADING	Downloading; responseText holds partial data.
-        4	DONE	The operation is complete.
+        4	DONE	The operation is complete. -->
+
+            <div class="card" >
+                <button id="show" style="background-color: yellow; color: black;"><span>Your Card</span></button>
+                <div id="cardContent"></div>
+              </div>
+
 </body>
 <script>
+     let photo , followers;
+
      const requestUrl = 'https://api.github.com/users/Trisha-24'
      const xhr = new XMLHttpRequest();
-     xhr.open('GET', requestUrl);
-     xhr.send();
+
+     let img = document.createElement('img');
+     let p = document.createElement('p');
+
+    document.getElementById('show').addEventListener('click', (e)=>{
+        xhr.open('GET', requestUrl);
+        xhr.send();
+       
+    }) 
+
+    function addThings(){
+       const card = document.querySelector('#cardContent');
+       img.src = photo;
+       img.alt = 'my Image';
+       img.style.width='100%';
+       p.innerHTML = `Followers: ${followers}`;
+       p.style.color="white";
+
+       card.appendChild(img);
+       card.appendChild(p);
+       
+    } 
+    
+     xhr.onreadystatechange =  function(){
+        //console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText);
+            photo = data.avatar_url;
+            followers = data.followers;
+            addThings();
+            
+        }
+     }
+     
+    
 </script>
 </html>
 
