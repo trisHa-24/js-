@@ -1,0 +1,2 @@
+# console.log
+# getter setter
